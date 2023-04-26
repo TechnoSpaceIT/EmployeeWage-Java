@@ -3,21 +3,16 @@ package com.igc.employeewage;
 import java.util.Random;
 
 public class EmployeeWage {
-
-	public static void main(String[] args) {
-		
-		//Welcome message for user
-		System.out.println("Welcome to Employee Wage Computation Program");
-		
-		int attendance;
-		int daily_wage = 0;
-		int month_wage = 0;
-		int empType;
-		int total_hr = 0;
-		int days = 1;
-		
-		Random random = new Random();
-		
+	int attendance;
+	int daily_wage = 0;
+	int month_wage = 0;
+	int empType;
+	int total_hr = 0;
+	int days = 1;
+	
+	Random random = new Random();
+	
+	public void calculateWage() {
 		while(days != 21 && total_hr < 100) {
 			System.out.println("Day = "+days+"   Total Hr="+total_hr);
 			daily_wage = 0;
@@ -50,5 +45,13 @@ public class EmployeeWage {
 		}
 		System.out.println("Total Monthly Wage = "+ month_wage);
 	}
-
+	
+	public static void main(String[] args) {
+		//Welcome message for user
+		System.out.println("Welcome to Employee Wage Computation Program");
+		
+		EmployeeWage employeeWage = new EmployeeWage();
+		employeeWage.calculateWage();
+		
+	}
 }
